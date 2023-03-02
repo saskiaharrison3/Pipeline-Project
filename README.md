@@ -46,9 +46,11 @@ Output: normalised_filtered_VCF
 
 Step eight: Annotate and filter variants on VEP
             Input: normalised_filtered_VCF
-            Filter: MAF >0.02 excluded
+            Filter: MAF >0.01 in 1k genomes excluded
 Output: Variants_VEP
-A list of ~20 variants none of the variants appear to be disease-causing
+
+Step nine: Filter on Variants_VEP
+           Filter: AF >0.01 gnomAD excluded
 
 Step nine: Upload normalised_filtered_VCF to Mutation Distiller
 Output: Variants_MutationDistiller

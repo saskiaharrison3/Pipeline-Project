@@ -55,3 +55,5 @@ Step nine: Filter on Variants_VEP
 Step nine: Upload normalised_filtered_VCF to Mutation Distiller
 Output: Variants_MutationDistiller
 A list of 3 variants none of which appear to be disease-causing
+
+These 3 variants are extracted from Variant_VEP list

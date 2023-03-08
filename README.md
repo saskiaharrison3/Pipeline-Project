@@ -26,7 +26,7 @@ Output: Exome_reads_QCfiltered_mapped
 Step seven: SAMTools Flagstat v2.0.4 on Exome_reads_QCfiltered_mapped
 
 Step eight: Map with BWA-MEM v0.7.17.2 on Exome_reads_R1 & Exome_reads_R2
-Map with BWA-MEM aligns the reads to the reference genome GRCh37 / h19 / b37
+Map with BWA-MEM aligns the reads to the reference genome GRCh37
 Output: Exome_reads_mapped
 
 Step nine: SAMTools Flagstat v2.0.4 on Exome_reads_mapped
@@ -56,7 +56,9 @@ Step fifteen: Filter on Variants_VEP
            Filter: AF >0.01 gnomAD excluded
 
 Step sixteen: Upload normalised_filtered_VCF to Mutation Distiller
-Output: Variants_MutationDistiller
-A list of 3 variants none of which appear to be disease-causing
+Output: A list of 3 variants none of which appear to be disease-causing
 
-These 3 variants are extracted from Variant_VEP list
+Step seventeen: These 3 variants are extracted from Variant_VEP list to produce a final excel file
+
+Step eighteen: MultiQC v1.11 on raw data for FastQC on Exome_reads & Exome_reads_Trimmomatic & Exome_reads_filterbyquality
+Output: MultiQC webpage & stats

@@ -36,12 +36,15 @@ Output: FreeBayes_variants
 
 Step eleven: bcftools filter v1.15.1 on FreeBayes_variants
           Restrict to region: UCSC R132 genes
-Output: VCF
+Output: VCF_forVEP
 
 Step twelve: bcftools norm on VCF_forVEP
 Output: normalisedVCF
 
 Step thirteen: VCFfilter on normalisedVCF_forVEP
+              Filter: DP (read depth at the locus) > 10
+              Filter: AO (count of observations at alt haplotype) > 5
+              Filter: AF (% of observations at alt haplotype) > 0.15
 Output: normalised_filtered_VCF
 
 Step fourteen: Annotate and filter variants on VEP

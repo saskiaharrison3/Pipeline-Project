@@ -17,7 +17,7 @@ Output: Exome_Reads_QCfiltered
 
 Step four: FastQC v0.73 on Exome_reads_QCfiltered
 
-Step five: FastQ splitter on Exome_reads_QCfiltered
+Step five: FastQ splitter v.1.1.5 on Exome_reads_QCfiltered
 Output: Exome_Reads_R1_QCfiltered & Exome_Reads_R2_QCfiltered
 
 Step six: Map with BWA-MEM v0.7.17.2 on Exome_reads_R1_QCfiltered & Exome_reads_R2_QCfiltered
@@ -29,30 +29,30 @@ Step eight: Map with BWA-MEM v0.7.17.2 on Exome_reads_R1 & Exome_reads_R2
 Map with BWA-MEM aligns the reads to the reference genome GRCh37 / h19 / b37
 Output: Exome_reads_mapped
 
-Step four: SAMTools Flagstat v2.0.4 on Exome_reads_mapped
+Step nine: SAMTools Flagstat v2.0.4 on Exome_reads_mapped
 
-Step five: FreeBayes v1.3.6 on Exome_reads_QCfiltered_mapped
+Step ten: FreeBayes v1.3.6 on Exome_reads_QCfiltered_mapped
 Output: FreeBayes_variants
 
-Step six: bcftools filter v1.15.1 on FreeBayes_variants
+Step eleven: bcftools filter v1.15.1 on FreeBayes_variants
           Restrict to region: UCSC R132 genes
 Output: VCF
 
-Step seven: bcftools norm on VCF_forVEP
+Step twelve: bcftools norm on VCF_forVEP
 Output: normalisedVCF
 
-Step eight: VCFfilter on normalisedVCF_forVEP
+Step thirteen: VCFfilter on normalisedVCF_forVEP
 Output: normalised_filtered_VCF
 
-Step eight: Annotate and filter variants on VEP
+Step fourteen: Annotate and filter variants on VEP
             Input: normalised_filtered_VCF
             Filter: MAF >0.01 in 1k genomes excluded
 Output: Variants_VEP
 
-Step nine: Filter on Variants_VEP
+Step fifteen: Filter on Variants_VEP
            Filter: AF >0.01 gnomAD excluded
 
-Step nine: Upload normalised_filtered_VCF to Mutation Distiller
+Step sixteen: Upload normalised_filtered_VCF to Mutation Distiller
 Output: Variants_MutationDistiller
 A list of 3 variants none of which appear to be disease-causing
 
